@@ -1,0 +1,83 @@
+{
+    "Comment": "Update IP address due to ISP change", 
+    "Changes": [
+        {
+            "Action": "UPSERT", 
+            "ResourceRecordSet": {
+                "Name": "travel.staticvoid.co.uk", 
+                "Type": "A",
+                "TTL": 10, 
+                "ResourceRecords": [
+                    {
+                        "Value": "{{IP}}"
+                    }
+                ]
+            }
+        },
+        {
+            "Action": "UPSERT", 
+            "ResourceRecordSet": {
+                "Name": "apps.staticvoid.co.uk", 
+                "Type": "A",
+                "TTL": 10, 
+                "ResourceRecords": [
+                    {
+                        "Value": "{{IP}}"
+                    }
+                ]
+            }
+        },
+        {
+            "Action": "UPSERT", 
+            "ResourceRecordSet": {
+                "Name": "dev.staticvoid.co.uk", 
+                "Type": "A",
+                "TTL": 10, 
+                "ResourceRecords": [
+                    {
+                        "Value": "{{IP}}"
+                    }
+                ]
+            }
+        },
+        {
+            "Action": "UPSERT", 
+            "ResourceRecordSet": {
+                "Name": "minecraft.staticvoid.co.uk", 
+                "Type": "A",
+                "TTL": 10, 
+                "ResourceRecords": [
+                    {
+                        "Value": "{{IP}}"
+                    }
+                ]
+            }
+        },
+        {
+            "Action": "UPSERT", 
+            "ResourceRecordSet": {
+                "Name": "mods.staticvoid.co.uk", 
+                "Type": "A",
+                "TTL": 10, 
+                "ResourceRecords": [
+                    {
+                        "Value": "{{IP}}"
+                    }
+                ]
+            }
+        },
+        {
+            "Action": "UPSERT", 
+            "ResourceRecordSet": {
+                "Name": "vr.staticvoid.co.uk", 
+                "Type": "A",
+                "TTL": 10, 
+                "ResourceRecords": [
+                    {
+                        "Value": "{{IP}}"
+                    }
+                ]
+            }
+        }               
+    ]
+}
