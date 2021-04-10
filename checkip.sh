@@ -6,7 +6,6 @@ slackURL=$2
 echo "AWS Zone ID : $zoneID"
 echo "Slack URL : $slackURL"
 
-wd=`pwd`
 currentIP=`curl 'https://api.ipify.org'`
 lastIP=`cat ip.data`
 now=$(date +"%Y-%m-%d--%H-%M")
@@ -19,7 +18,7 @@ if [[ $currentIP != $lastIP ]]; then
 	echo "IP addresses do not match... requesting change to new IP address $currentIP"
 
 	cat record-set.tmpl | sed "s/{{IP}}/$currentIP/g" > ${rsFilename}
-	request=`aws route53 change-resource-record-sets --hosted-zone-id $zoneID --change-batch file://${wd}/${rsFilename}`
+	request=`aws route53 change-resource-record-sets --hosted-zone-id $zoneID --change-batch file://${rsFilename}`
 	requestId=`echo $request|jq .ChangeInfo.Id`
 
 	echo $request
@@ -34,3 +33,5 @@ if [[ $currentIP != $lastIP ]]; then
 else 
 	echo "IP addresses match, nothing to do."
 fi
+
+sleep 5s
