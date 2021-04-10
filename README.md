@@ -18,7 +18,13 @@ IP address monitor to identify ISP changes in a dynamic IP, update AWS with the 
 > can then be setup to run the ```.bat```.  Make sure its setup to run in this directory.
 
 ## Slack
-Within your workspace in Slack create a new App.
+Within your workspace in Slack create a new App for the IP Monitor.
+
+- Create a Workspace on [Slack](https://www.slack.com) or login to your existing workspace.
+- Create a new app at [api.slack.com](https://api.slack.com/apps)
+
+> Once you have an app if you want there is a nice image called ```ip-monitor-icon.png``` in here you can use for it.
+> That way it looks pretty when you get a notification.
 
 # Usage
 
@@ -29,5 +35,5 @@ Where:
 
 ```AWS_ZONE_ID``` - Within [AWS Route 53 hosted zones](https://console.aws.amazon.com/route53/v2/hostedzones#) this is your Hosted zone ID e.g. ```Z36KQ5S2EXXXXX```
 
-```SLACK_URL``` - Within [Your Apps in Slack](https://api.slack.com/apps) the full Webhook URL. e.g ```https://hooks.slack.com/services/T0H3CXXXX/B01SW7UXXXX/U3eGZZYWKRtLqPYOXhfxxxx```
+```SLACK_URL``` - Within [Your Apps in Slack](https://api.slack.com/apps) the full Webhook URL under Incomming Webhooks. e.g ```https://hooks.slack.com/services/T0H3CXXXX/B01SW7UXXXX/U3eGZZYWKRtLqPYOXhfxxxx```
 
