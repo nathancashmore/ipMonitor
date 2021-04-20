@@ -6,10 +6,18 @@ slackURL=$2
 echo "AWS Zone ID : $zoneID"
 echo "Slack URL : $slackURL"
 
+validIPRegEx='^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$'
 currentIP=`curl 'https://api.ipify.org'`
 lastIP=`cat ip.data`
 now=$(date +"%Y-%m-%d--%H-%M")
 rsFilename=record-set-${now}.json
+
+if [[ $currentIP =~ $validIPRegEx ]]; then
+  echo "IP returned is valid"
+else
+  echo "IP returned is NOT valid ... exiting."
+  exit 0;
+fi
 
 echo "IP currently set to $currentIP"
 echo "Last know IP address was $lastIP"
